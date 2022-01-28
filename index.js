@@ -1,29 +1,44 @@
-var olaMundo = "Olá mundo!";
-console.log(olaMundo);
+window.addEventListener("focus", event => {
 
-let a = 10;
+    console.log("focus");
 
-// variável que nunca muda
-const b = "20";
+});
 
-console.log(a == b);
+document.addEventListener("click", event => {
 
-console.log(a == b && typeof b == "string");
+    console.log("click");
 
-console.log(a == b || a != b);
+});
 
-let cor = "amarelo";
+let agora = new Date;
 
-if (cor === "verde") {
+// console.log(agora);
+console.log(agora.toLocaleDateString("pt-br"));
 
-    console.log("siga!");
+// arrays
+let carros = ["uno", "palio", "toro"];
 
-} else if (cor === "amarelo") {
+console.log(carros[1]);
 
-    console.log("atenção!");
+carros.forEach(function (value, index) {
 
-} else {
+    console.log(value, index);
+});
 
-    console.log("pare!");
+let celular = function () {
+
+    this.cor = "prata";
+
+    this.ligar = function () {
+
+        console.log("uma ligação");
+        return "ligando...";
+    }
 
 }
+
+let objeto = new celular();
+
+console.log(objeto);
+
+console.log(objeto.ligar);
